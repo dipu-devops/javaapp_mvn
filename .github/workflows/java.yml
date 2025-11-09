@@ -19,8 +19,12 @@ jobs:
       - name: Changing the directory
         run: cd target
 
-      - name: Run ColorFul App
-        run: java -jar /home/adminuser/actions-runner/_work/javaapp_mvn/javaapp_mvn/target/colorful-app-1.0.0.jar
+      - name: Run Colorful App in background
+        run: |
+          nohup java -jar /home/adminuser/actions-runner/_work/javaapp_mvn/javaapp_mvn/target/colorful-app-1.0.0.jar > app.log 2>&1 &
+          echo $! > app.pid
+          sleep 10
+          echo "Application started in background"
 
       - name: Checking the status of website in local
         run: curl http://localhost:8080
