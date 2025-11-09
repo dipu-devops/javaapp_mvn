@@ -20,7 +20,7 @@ jobs:
         run: cd target
 
       - name: Run ColorFul App
-        run: java -jar colorful-app-1.0.0.jar
+        run: java -jar /home/adminuser/actions-runner/_work/javaapp_mvn/javaapp_mvn/target/colorful-app-1.0.0.jar
 
       - name: Checking the status of website in local
         run: curl http://localhost:8080
