@@ -20,7 +20,8 @@ jobs:
         run: cd target
 
       - name: Run ColorFul App
-        run: |
-          java -jar colorful-app-1.0.0.jar
-          curl http://localhost:8080
+        run: java -jar colorful-app-1.0.0.jar
+
+      - name: Checking the status of website in local
+        run: curl http://localhost:8080
 
